@@ -5,4 +5,6 @@
 /* Déclaration des variables */
 var myFirstname = 'Christophe', myAge = 45;
 
-console.log('Je m\'appelle ' + myFirstname + '.\n' + 'J\'ai ' + myAge + ' ans.');
+/* Affichage des informations dans la console */
+console.log('Je m\'appelle ' + myFirstname + '.');
+console.log('J\'ai ' + myAge + ' ans.');
