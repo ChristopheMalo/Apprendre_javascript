@@ -1,0 +1,67 @@
+/**
+ * Projet Javascript certif part 01
+ * Cours Javascript OpenClassrooms
+ * Adaptation Christophe Malo
+ *
+ * @project     Javascript certif part 01
+ * @namefile    projet_javascript_certif_part01_v01.css
+ * @fileversion 1.0.0
+ * @cssversion  css3
+ * @author      Christophe Malo
+ * @copyright   2015 by the author & openclassrooms
+ * @license     no license - free to use - just link to my github - Thanks :)
+ * @mygithub    https://github.com/ChristopheMalo    
+*/
+/**
+
+/**
+ * -------------------------
+ * Generique
+ * -------------------------
+ */
+body {
+    padding-top: 10px;
+}
+
+/* Permet de visualiser la grille */
+[class*="col-"], footer {
+    background-color: #c9bad7;
+    border: 1px solid #948b9d;
+    border-radius: 6px;
+    color: #6a6073;
+}
+
+h1 {
+    font-size: 190%;
+}
+
+h2 {
+    font-size: 170%
+}
+
+h3 {
+    font-size: 150%;
+}
+
+section li {
+    color: #000;
+}
+
+footer {
+    font-size: 90%;
+    padding-top: 40px;
+    text-align: center;
+}
+
+/**
+ * -------------------------
+ * Column
+ * -------------------------
+ */
+/* Force la même hauteur pour toutes les colonnes d'une rangée - Ne fonctionne pas sous IE9 */
+.row-same-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
