@@ -1,5 +1,5 @@
 /* 
- * Code Javascript chapitre 02 exercice 04 - Valeurs
+ * Code Javascript chapitre 02 exercice 05 - Calculer la TVA
  *
  */
 
