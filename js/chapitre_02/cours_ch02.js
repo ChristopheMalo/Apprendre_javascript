@@ -41,3 +41,10 @@ console.log(h + 10); // Affiche 3510
 
 h = Number('25');
 console.log(h + 10); // Affiche 35
+
+
+/* Nommage des variables */
+var rayon = 5.5;
+var pi = 3.14;
+var perimetre = 2 * pi * rayon;
+console.log('Le périmètre d\'un cercle de rayon ' + rayon + ' est ' + perimetre);
