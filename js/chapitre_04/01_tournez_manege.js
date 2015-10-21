@@ -3,6 +3,7 @@
  *
  */
 /* Boucle la plus adéquate : nombre de tours est connu -> For
+ * Idem avec le prompt
  * 
  */
 
