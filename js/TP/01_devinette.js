@@ -12,16 +12,16 @@ console.log("Bienvenue dans ce jeu de devinette !");
 var solution = Math.floor(Math.random() * 100) + 1;
 
 // Décommentez temporairement cette ligne pour mieux vérifier le programme
-// console.log("(La solution est " + solution + ")");
+console.log("(La solution est " + solution + ")");
 
 
 
 // TODO : complétez le programme
 
 /* Initialisation des variables pour lancer la boucle */
-var nombreSaisi = 0,
-    compteurEssai = 0,
-    compteurMax = 6;
+var nombreSaisi     = 0,
+    compteurEssai   = 0,
+    compteurMax     = 6;
 
 console.log('Vous devez trouver un nombre compris entre 1 et 100 (en 6 essais maximum).');
 
@@ -41,16 +41,16 @@ while ((nombreSaisi !== solution) && (compteurEssai < compteurMax)) { // Tant qu
     } else if (nombreSaisi < solution) { // Le nombre saisi est inférieur à la solution
 
         console.log(nombreSaisi + ' est trop petit.');
-
-    } else { // nombreSaisi === solution - Bonne réponse
-
-        console.log('Bravo ! La solution était ' + solution + '.');
-        console.log('Vous avez trouvé en ' + compteurEssai + ' essai(s).');
-
     }
 }
 
-if (compteurEssai === compteurMax) {
+
+if (nombreSaisi === solution) { // nombreSaisi === solution - Bonne réponse
+    
+    console.log('Bravo ! La solution était ' + solution + '.');
+    console.log('Vous avez trouvé en ' + compteurEssai + ' essai(s).');
+
+} else { // 6 coups utilisés + mauvaise réponse
     
     console.log('Désolé, vous avez perdu. Vous avez utilisé vos ' + compteurEssai + ' essais.');
     console.log('La solution était ' + solution + '.');
