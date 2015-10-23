@@ -1,5 +1,5 @@
 /* 
- * Code Javascript chapitre 05 exercice 02 - Carré d'un nombre
+ * Code Javascript chapitre 05 exercice 03 - Le mimimum de 2 nombres
  *
  */
 // TODO : écrire la fonction min()
