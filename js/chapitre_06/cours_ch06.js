@@ -30,4 +30,20 @@ console.log(word === 'Test simple');
 console.log(word === 'Test du mot');
 
 
-/* Accéder à un caractère d'une chaîne */
+/* Accéder à un caractère d'une chaîne par son indice (index en anglais) */
+console.log('\nAccéder à un caractère d\'une chaîne');
+var informatique = 'ordinateur';
+console.log('Le mot : ' + informatique);
+console.log('Caractère indice 3 : ' + informatique.charAt(3));  // Méthode 1 -> Affiche i
+console.log('Caractère indice 7 : ' + informatique[7]);         // Méthode 2 -> Affiche e
+
+var longueurInformatique = informatique.length;
+console.log('Dernier caractère de la chaîne : ' + informatique[longueurInformatique - 1]);  // Affiche r
+console.log('Dernier caractère de la chaîne : ' + informatique[longueurInformatique]);      // Affiche undefined
+// OU
+console.log('Dernier caractère de la chaîne : ' + informatique.charAt(longueurInformatique - 1)); // Affiche r
+
+// Parcourie la chaîne
+for (var i = 0; i < longueurInformatique; i++) {
+    console.log('Caractère indice ' + i + ' : ' + informatique[i]);
+}
