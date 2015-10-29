@@ -3,7 +3,7 @@
  */
 /* Manipulez les chaînes de caractères */
 // Obtenir la longueur d'une chaîne - propriété length
-console.log('Longueur d\'une chaîne - Length')
+console.log('Longueur d\'une chaîne - Length');
 console.log('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.length);   // Affiche 26
 console.log('Je suis ton père'.length);             // Affiche 16
 
