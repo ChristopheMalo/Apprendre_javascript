@@ -75,10 +75,12 @@ while (true) {
             var prenom  = '';
             
             while ((!nom) || (nom.trim() === '')) { // Gérer la chaine vide, espace vide sans caractères ou le bouton annuler
+                console.log('\nVous devez saisir un nom valide - Vous ne pouvez pas quittez l\'application à ce stade\n');
                 nom = prompt('Entrez le nom du nouveau contact :');
             }
             
             while ((!prenom) || (prenom.trim() === '')) { // quand un nom est saisi, alors passage au prénom
+                console.log('\nVous devez saisir un prénom valide - Vous ne pouvez pas quittez l\'application à ce stade\n');
                 prenom  = prompt('Entrez le prénom du nouveau contact :');
             }
             
