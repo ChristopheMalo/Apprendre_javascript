@@ -26,69 +26,83 @@ var contact2 = Object.create(Contact);
 contact2.initContact('Nelsonne', 'Mélodie');
 
 // Création du tableau contacts pour stocker les contacts
-// Avec ajout direct des contacts
+// Avec ajout direct des contact 1 et 2 dans le tableau contacts
 var contacts = [contact1, contact2];
 
 
 
 console.log('Bienvenue dans le gestionnaire des contacts');
 
-// Faire un choix - initialisation de la variable pour lancer la boucle
-// ici 3 car 0, 1 et 2 sont réservés pour le programme
-var choixOption = 3;
-
-while (choixOption !== 0) { // Tant que l'utilisateur ne quitte pas avec 0 ou le bouton annuler, le programme boucle sur la question des choix
-    
+/*
+ *
+ * La boucle se lance 
+ * 
+ * Si choix utilisateur === 0
+ * le programme quitte 
+ * sinon le programme boucle sur la question des choix
+ * Le programme gère l'affichage de la liste et l'ajout des contacts
+ * 
+ */
+while (true) {
     // Proposition des choix
+    console.log('\nVeuillez choisir une option ci-dessous :');
     console.log('1 : Lister les contacts');
     console.log('2 : Ajouter un contact');
     console.log('0 : Quitter');
     
     // Demander le choix de l'utilisateur
-    choixOption = Number(prompt('Choisissez une option'));
+    var chaineSaisie    = prompt('Choisissez une option');  // Récupérer la chaine saisie
+    var choixOption     = parseInt(chaineSaisie);           // Transformer la chaine en nombre pour controler la saisie de l'utilisateur
     
-    // Condition switch pour gérer les choix - Clarté du code
-    switch (choixOption) {
+    if (choixOption === 0) { // Quitter le programme
+    
+        break; // Quitte la boucle While
+    
+    } else if (choixOption === 1) { // Lister les contacts - Choix 1
         
-        // Lister les contacts - Choix 1
-        case 1:
-            console.log('\nVoici la liste de tous vos contacts :');
-            
-            contacts.forEach(function (contact) {
-                console.log(contact.decrireContact());
-            });
-            
-            console.log('\n'); // Placer un espace après la liste pour la lisibilité
-            break;
+        console.log('\nVoici la liste de tous vos contacts :');
+
+        contacts.forEach(function (contact) {
+            console.log(contact.decrireContact());
+        });
+
+        console.log('\n'); // Placer un espace après la liste des contacts pour la lisibilité
         
+    } else if (choixOption === 2) { // Ajouter un contact - Choix 2
         
-        // Ajouter un contact - Choix 2
-        case 2:
-            // Initialiser les variables pour lancer les boucles while
+            // Initialiser les variables pour lancer boucle while
             var nom     = '';
             var prenom  = '';
             
-            while ((!nom) || (nom.trim() === '')) { // Gérer la chaine vide ou le bouton annuler
+            while ((!nom) || (nom.trim() === '')) { // Gérer la chaine vide, espace vide sans caractères ou le bouton annuler
                 nom = prompt('Entrez le nom du nouveau contact :');
             }
             
-            // Si un nom est saisi, alors saisie du prénom
-            while ((!prenom) || (prenom.trim() === '')) {
+            while ((!prenom) || (prenom.trim() === '')) { // quand un nom est saisi, alors passage au prénom
                 prenom  = prompt('Entrez le prénom du nouveau contact :');
             }
             
-            var contact = Object.create(Contact);           // Création du contact par prototypage
-            contact.initContact(nom, prenom);               // Initialisation du contact avec les valeurs saisies
+            var contact = Object.create(Contact);   // Création du contact par prototypage
+            contact.initContact(nom, prenom);       // Initialisation du contact avec les valeurs saisies
             
-            contacts.push(contact);                         // Ajout du contact au tableau contacts
+            var nbreContactsBeforePush = contacts.length;                   // Calculer le nombre de contacts dans le tableau avant ajout
+            // console.log('nbre avant push ' + nbreContactsBeforePush);    // Debug
+            contacts.push(contact);                                         // Ajout du contact au tableau contacts
+            var nbreContactsAfterPush = contacts.length;                    // Calculer le nombre de contacts dans le tableau après ajout
+            // console.log('nbre après push ' + nbreContactsAfterPush);     // Debug
             
             // Vérifier si le contact est bien ajouté au tableau
-            
-            console.log('\nLe nouveau contact a été ajouté.\n\n');
-            break;
-            
-        // Attention rappel : le default est optionnel
+            if (nbreContactsAfterPush > nbreContactsBeforePush) {
+                console.log('\nLe nouveau contact a été ajouté.\n');
+            } else {
+                console.log('\nAucun contact n\'a été ajouté. Veuillez recommencer.\n');
+            }            
+        
+    } else { // Si l'utilisateur saisit un autre nombre que 0, 1 ou 2 - ou des lettres - ou rien le programme boucle et demande choix options
+        
+        console.log('\nVous devez saisir un nombre valide.');
+        
     }
 }
 
-console.log('\nAu revoir');
+console.log('\nAu revoir'); // Fin du programme
